@@ -1,0 +1,67 @@
+// MongoDB Playground
+// To disable this template go to Settings | MongoDB | Use Default Template For Playground.
+// Make sure you are connected to enable completions and to be able to run a playground.
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+// Select the database to use.
+use('mongodbVSCodePlaygroundDB');
+
+// The drop() command destroys all data from a collection.
+// Make sure you run it against the correct database and collection.
+
+use('UMall');
+db.Customers.insertOne(
+  {'Customerid':'55','name':'ananth','contact':'8139343333','address':'visakhaptnam'}
+)
+
+use('UMall')
+db.Payment.insertMany([
+  {'Paymentid':'22','Categoryid':'33','Date':'1-1-2022'
+ },
+ {'Paymentid':'11','Categoryid':'23','Date':'2-2-2022'},
+ {'Paymentid':'33','Categoryid':'32','Date':'3-3-2022'}
+])
+
+use('UMall');
+db.['Shopping Order'].find(
+   { Customerid : 124 }
+)
+
+use('UMall')
+db.Payment.find(
+   { Categoryid : 30 } 
+)
+
+use('UMall')
+db.Products.findOne(
+   { Productid : 4}
+)
+
+use('UMall')
+db.Customers.updateOne(
+   
+   {     'Customerid':122}   ,
+   { $set : {contact : 87914878749} }
+)
+
+use('UMall')
+db.Products.updateMany(
+   {
+     'Productid':2},
+     {$set: {Productname : "jeans"}}
+   
+)
+
+use('UMall')
+db.Payment.deleteOne(
+   {
+      'Paymentid':5,
+   }
+)
+
+use('UMall')
+db.Products.deleteMany(
+   {
+     'Productid':6
+   }
+)
